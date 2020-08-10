@@ -55,23 +55,14 @@ const Dish = (props) => {
     props.onIncreseQuantity(itemId, quantity+1);
   }
 
-  // const quantityChangeHandler = () => {
-  //   console.log("called");
-  //   let q = props.cart.cartItems.map((item) => {
-  //     console.log(item);
-  //     if(item.itemId === itemId) {
-  //       return item;
-  //     }
-  //   });
-  //   console.log(q);
-  // }
+  
 
 
   let ActionButton = addClicked && (quantity > 0 ) ?     
   <ButtonGroup size="small" color="secondary" aria-label="small outlined button group">
     <Button
         aria-label="reduce"
-        onClick={reduceQuantityHandler}
+        onClick={() => reduceQuantityHandler()}
       >
         <RemoveIcon fontSize="small" />
       
@@ -79,7 +70,7 @@ const Dish = (props) => {
       <Button>{quantity}</Button>
       <Button
         aria-label="increase"
-        onClick={increaseQuantityHandler}
+        onClick={() => increaseQuantityHandler()}
       >
         <AddIcon fontSize="small" />
       </Button>
@@ -88,7 +79,6 @@ const Dish = (props) => {
     setAddClicked(true);
     setQuantity(1); 
     addItemHandler();
-    // quantityChangeHandler();
     }}>
    ADD +
   </Button>;
@@ -115,30 +105,7 @@ const Dish = (props) => {
       </CardActionArea>
       <CardActions>
       {ActionButton}
-      {/* <ButtonGroup aria-label="">
-          <Button
-            aria-label="reduce"
-            // onClick={() => {
-            //   setCount(Math.max(count - 1, 0));
-            // }}
-          >
-            <RemoveIcon fontSize="small" />
-           
-          </Button>
-          <Button>
-            <Typography variant="subtitle1"  component="p">
-                1
-            </Typography>
-          </Button>
-          <Button
-            aria-label="increase"
-            // onClick={() => {
-            //   setCount(count + 1);
-            // }}
-          >
-            <AddIcon fontSize="small" />
-          </Button>
-        </ButtonGroup> */}
+      
       </CardActions>
     </Card>
   );

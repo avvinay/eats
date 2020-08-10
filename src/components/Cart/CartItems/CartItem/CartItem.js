@@ -19,12 +19,12 @@ const useStyles = makeStyles((theme) => ({
 const CartItem = (props) => {
   const classes = useStyles();
 
-  const reduceQuantityHandler = () => {
-    props.onReduceQuantity(props.itemId, props.quantity)
-}
-const increaseQuantityHandler = () => {
-    props.onAddQuantity(props.itemId, props.quantity)
-}
+//   const reduceQuantityHandler = () => {
+//     props.onReduceQuantity(props.itemId, props.quantity)
+// }
+// const increaseQuantityHandler = () => {
+//     props.onAddQuantity(props.itemId, props.quantity)
+// }
 
 
     return (

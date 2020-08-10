@@ -14,6 +14,7 @@ const styles = (theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(2),
+    maxWidth: 140
   },
   closeButton: {
     position: 'absolute',

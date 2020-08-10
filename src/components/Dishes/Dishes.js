@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Dish from './Dish/Dish1';
+import Dish from './Dish/Dish';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -128,7 +128,7 @@ const Dishes = () => {
           image_url="https://b.zmtcdn.com/data/dish_photos/dca/437bf329cf5ef8d4a9fca4c312a23dca.jpg?fit=around%7C200%3A200" 
           item_name="BK Veggie + Chocolate Shake" 
           item_price="234"
-          item_description=""
+          item_description="fdlskfjsdklfjl"
           />
         </Grid>
       </React.Fragment>

@@ -6,7 +6,7 @@ const initialState = {
     deliveryCharges: 30,
     total: 80,
     orders: [],
-    isUserLogged: false
+    // isUserLogged: true
 };
 
 
@@ -42,48 +42,48 @@ const CartReducer = (state = initialState, action) => {
                 total: totalAddValue
             }
 
-        // case actionTypes.REDUCE_QUANTITY:
-        //     let newRemoveItems = [...state.cartItems];
-        //     let totalRemovedValue = state.total;
-        //     newRemoveItems.map((item) => {
-        //         if(item.itemId === action.value.itemId) {
-        //             item.quantity = action.value.quantity;
-        //             item.totalPrice -= item.quantity * item.itemPrice;
-        //             totalRemovedValue -= parseFloat(item.itemPrice);
-        //         }
-        //         return item;
-        //     });
-        //     return {
-        //         ...state,
-        //         cartItems: newRemoveItems,
-        //         total: totalRemovedValue
-        //     }
-        // case actionTypes.REMOVE_ITEM:
-        //     let filterItems = [...state.cartItems];
-        //     let filteredItems = filterItems.filter((item) => item.itemId !== action.value.itemId);
-        //     let updatedTotalValue = state.total - parseFloat(action.value.itemPrice);
-        //     return {
-        //         ...state,
-        //         cartItems: filteredItems,
-        //         total: updatedTotalValue
+        case actionTypes.REDUCE_QUANTITY:
+            let newRemoveItems = [...state.cartItems];
+            let totalRemovedValue = state.total;
+            newRemoveItems.map((item) => {
+                if(item.itemId === action.value.itemId) {
+                    item.quantity = action.value.quantity;
+                    item.totalPrice -= item.quantity * item.itemPrice;
+                    totalRemovedValue -= parseFloat(item.itemPrice);
+                }
+                return item;
+            });
+            return {
+                ...state,
+                cartItems: newRemoveItems,
+                total: totalRemovedValue
+            }
+        case actionTypes.REMOVE_ITEM:
+            let filterItems = [...state.cartItems];
+            let filteredItems = filterItems.filter((item) => item.itemId !== action.value.itemId);
+            let updatedTotalValue = state.total - parseFloat(action.value.itemPrice);
+            return {
+                ...state,
+                cartItems: filteredItems,
+                total: updatedTotalValue
 
-        //     }
-        // case actionTypes.CREATE_ORDER:
-        //     let orderItems = [...state.cartItems];
-        //     let orderObj = {
-        //         items: orderItems,
-        //         gst: state.gst,
-        //         deliveryCharges: state.deliveryCharges,
-        //         total: state.total
-        //     };
-        //     let orders = [...state.orders];
-        //     orders.push(orderObj);
-        //     return {
-        //         ...state,
-        //         cartItems: [],
-        //         total: 80,
-        //         orders
-        //     }
+            }
+        case actionTypes.CREATE_ORDER:
+            let orderItems = [...state.cartItems];
+            let orderObj = {
+                items: orderItems,
+                gst: state.gst,
+                deliveryCharges: state.deliveryCharges,
+                total: state.total
+            };
+            let orders = [...state.orders];
+            orders.push(orderObj);
+            return {
+                ...state,
+                cartItems: [],
+                total: 80,
+                orders
+            }
         case actionTypes.USER_LOGGED:
             return {
                 ...state,
