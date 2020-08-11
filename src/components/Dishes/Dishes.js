@@ -20,10 +20,11 @@ const useStyles = makeStyles((theme) => ({
 const Dishes = () => {
   const classes = useStyles();
 
-  function FormRow() {
-    return (
-      <React.Fragment>
-        <Grid item xs={3}>
+  return (
+    <div className={classes.root}>
+      <Grid container spacing={1}>
+        <Grid container item xs={12} spacing={3}>
+        <Grid item xs={3} key={1}>
           <Dish 
             item_id = {1}
             image_url="https://b.zmtcdn.com/data/dish_photos/f7e/3b0bc3809a39f2c0308cf9eccbf59f7e.jpg?fit=around%7C200%3A200" 
@@ -32,7 +33,7 @@ const Dishes = () => {
             item_description="Delicious chicken biryani served with raitha."
              />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={3} key={2}>
           <Dish 
             item_id = {2}
             image_url="https://b.zmtcdn.com/data/dish_photos/2bc/42677600c3385a140ca07327da77a2bc.jpg?fit=around%7C200%3A200" 
@@ -41,7 +42,7 @@ const Dishes = () => {
             item_description="Spicy Fried boiled eggs layered with biryani rice."
              />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={3} key={3}>
           <Dish 
             item_id = {3}
             image_url="https://b.zmtcdn.com/data/dish_photos/d35/59f31d6379a6fdb65a5ecba401e2ad35.jpg?fit=around%7C200%3A200" 
@@ -50,7 +51,7 @@ const Dishes = () => {
             item_description="Hyderabadi Veg Dum Biryani with Beans, Cauliflower, Potatoes & Carrots"
              />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={3} key={4}>
           <Dish 
           item_id = {4}
           image_url="https://b.zmtcdn.com/data/dish_photos/06d/0fcba1e2e850931575ed459e44b7206d.jpg?fit=around%7C200%3A200" 
@@ -59,7 +60,7 @@ const Dishes = () => {
           item_description="Chicken Fry Piece Biryani + Beverage[250ml]."
           />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={3} key={5}>
           <Dish 
           item_id = {5}
           image_url="https://b.zmtcdn.com/data/pictures/6/246/ba50a5176f9b3abf84a4b734543474a2.jpg?output-format=webp" 
@@ -68,7 +69,7 @@ const Dishes = () => {
           item_description="Chicken cubes, salami, capsicum, spicy dip."
            />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={3} key={6}>
           <Dish 
           item_id = {6}
           image_url="https://b.zmtcdn.com/data/pictures/6/246/ba50a5176f9b3abf84a4b734543474a2.jpg?output-format=webp" 
@@ -77,7 +78,7 @@ const Dishes = () => {
           item_description="Toasted chicken in chilli and soya sause."
           />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={3} key={7}>
           <Dish 
           item_id = {7}
           image_url="https://b.zmtcdn.com/data/pictures/6/246/ba50a5176f9b3abf84a4b734543474a2.jpg?output-format=webp" 
@@ -86,7 +87,7 @@ const Dishes = () => {
           item_description="3 types of cheese."
           />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={3} key={8}>
           <Dish 
           item_id = {8}
           image_url="https://b.zmtcdn.com/data/dish_photos/5fb/13748082c56fed493370bc4cc15855fb.png?fit=around%7C200%3A200" 
@@ -95,7 +96,7 @@ const Dishes = () => {
           item_description="Chicken out with the delicious Crispy Chicken burger."
           />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={3} key={9}>
           <Dish 
           item_id = {9}
           image_url="https://b.zmtcdn.com/data/dish_photos/5b0/69991d205ea2f003d91fb27f309fb5b0.png?fit=around%7C200%3A200" 
@@ -104,7 +105,7 @@ const Dishes = () => {
           item_description="A delicious burger that's 'Made for India'."
           />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={3} key={10}>
           <Dish 
           item_id = {10}
           image_url="https://b.zmtcdn.com/data/dish_photos/2c1/d7bdc8c78f251e8a8f262aa182a732c1.png?fit=around%7C200%3A200" 
@@ -113,7 +114,7 @@ const Dishes = () => {
           item_description="Bigger - Better - Best."
           />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={3} key={11}>
           <Dish 
           item_id = {11}
           image_url="https://b.zmtcdn.com/data/dish_photos/824/12ded90c389a2656226b86f2ddb92824.jpg?fit=around%7C200%3A200" 
@@ -122,7 +123,7 @@ const Dishes = () => {
           item_description="A special creation for vegetarians!."
           />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={3} key={12}>
           <Dish 
           item_id = {12}
           image_url="https://b.zmtcdn.com/data/dish_photos/dca/437bf329cf5ef8d4a9fca4c312a23dca.jpg?fit=around%7C200%3A200" 
@@ -131,15 +132,6 @@ const Dishes = () => {
           item_description="fdlskfjsdklfjl"
           />
         </Grid>
-      </React.Fragment>
-    );
-  }
-
-  return (
-    <div className={classes.root}>
-      <Grid container spacing={1}>
-        <Grid container item xs={12} spacing={3}>
-          <FormRow />
         </Grid>
       </Grid>
     </div>
