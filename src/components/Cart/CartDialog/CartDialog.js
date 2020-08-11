@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import CartItems from '../CartItems/CartItems';
 import { connect } from 'react-redux';
 import * as actionCretors from '../../../services/Cart/index';
+import Snackbar from '@material-ui/core/Snackbar';
 
 const styles = (theme) => ({
   root: {
@@ -24,6 +25,11 @@ const styles = (theme) => ({
     color: theme.palette.grey[500],
   },
 });
+
+
+
+
+
 
 const DialogTitle = withStyles(styles)((props) => {
   const { children, classes, onClose, ...other } = props;
@@ -55,6 +61,26 @@ const DialogActions = withStyles((theme) => ({
 const CartDialog = (props) => {
 
   const [open, setOpen] = React.useState(props.cartStatus);
+  const [snackOpen, setSnackOpen] = React.useState(false);
+
+  const handleSnackOpen = () => {
+    setSnackOpen(true);
+  }
+  const handleSnackClose = () => {
+    setSnackOpen(false);
+  }
+
+  const snack = (
+    <Snackbar
+      anchorOrigin={ 'top', 'center' }
+      open={snackOpen}
+      onClose={handleSnackClose}
+      message="I love snacks"
+      key={'top' + 'center'}
+     />
+  );
+      
+   
   
   const handleClickOpen = () => {
     setOpen(true);
@@ -65,7 +91,8 @@ const CartDialog = (props) => {
 
   const orderNow = () => {
     props.onCreateOrder();
-
+    handleClose();
+    handleSnackClose();
   }
 
 
@@ -92,6 +119,7 @@ const CartDialog = (props) => {
           
         </DialogActions>
       </Dialog>
+      <snack />
     </div>
   );
 }

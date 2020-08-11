@@ -4,6 +4,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
 import { connect } from 'react-redux'; 
+import Rupee from '../../../Rupee/Rupee';
 
 
 // const useStyles = makeStyles((theme) => ({
@@ -25,21 +26,21 @@ const Bill = (props) => {
         <ListItem>
             <ListItemText>
                 <Typography variant="body2">
-                    Tax: {props.cart.gst}
+                    Tax: <Rupee />{props.cart.gst}
                 </Typography>
             </ListItemText>  
         </ListItem>
         <ListItem>         
             <ListItemText>
                 <Typography variant="body2">
-                    Delivery Charges: {props.cart.deliveryCharges}
+                    Delivery Charges: <Rupee />{props.cart.deliveryCharges}
                 </Typography>
             </ListItemText>  
         </ListItem>
         <ListItem>          
             <ListItemText>
                 <Typography variant="h6">
-                    Grand Total: {props.cart.total}
+                    Grand Total: <Rupee />{props.cart.total}
                 </Typography>
             </ListItemText>            
         </ListItem>
