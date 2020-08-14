@@ -1,7 +1,9 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Dish from './Dish/Dish';
+import {connect} from 'react-redux';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,8 +19,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Dishes = () => {
+const Dishes = (props) => {
+
+
   const classes = useStyles();
+
+   
+
 
   return (
     <div className={classes.root}>
@@ -138,5 +145,11 @@ const Dishes = () => {
   );
 }
 
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart
+  }
+}
 
-export default Dishes;
+
+export default connect(mapStateToProps,null)(Dishes);

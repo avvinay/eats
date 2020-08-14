@@ -20,12 +20,12 @@ const useStyles = makeStyles((theme) => ({
 const CartItem = (props) => {
   const classes = useStyles();
 
-  const reduceQuantityHandler = () => {
-    props.onReduceQuantity(props.itemId, props.quantity)
-}
-const increaseQuantityHandler = () => {
-    props.onAddQuantity(props.itemId, props.quantity)
-}
+//   const reduceQuantityHandler = () => {
+//     props.onReduceQuantity(props.itemId, props.quantity)
+// }
+// const increaseQuantityHandler = () => {
+//     props.onAddQuantity(props.itemId, props.quantity)
+// }
 
 
     return (
@@ -33,7 +33,7 @@ const increaseQuantityHandler = () => {
             <ListItemText  className={classes.space}>{props.itemName +' x '+ props.quantity} = </ListItemText>
             <ListItemText  className={classes.space}><Rupee />{props.totalPrice}</ListItemText>
 
-            <ButtonGroup size="small" color="secondary" aria-label="small outlined button group" >
+            {/* <ButtonGroup size="small" color="secondary" aria-label="small outlined button group" >
                 <Button
                     aria-label="reduce"
                     onClick={() => reduceQuantityHandler()}
@@ -48,22 +48,22 @@ const increaseQuantityHandler = () => {
                 >
                     <AddIcon fontSize="small" />
                 </Button>
-            </ButtonGroup>
+            </ButtonGroup> */}
         </ListItem>
     )
 }
 
 
-const mapDispatchToProps = dispatch => {
-    return {
-        onAddQuantity: (item_id, quantity) => {
-            dispatch(actionCreators.increaseQuantity(item_id, quantity))
-        },
-        onReduceQuantity: (item_id, quantity) => {
-            dispatch(actionCreators.reduceQuantity(item_id, quantity));
-          },
-    }
-}
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         onAddQuantity: (item_id, quantity) => {
+//             dispatch(actionCreators.increaseQuantity(item_id, quantity))
+//         },
+//         onReduceQuantity: (item_id, quantity) => {
+//             dispatch(actionCreators.reduceQuantity(item_id, quantity));
+//           },
+//     }
+// }
 
-export default connect(null, mapDispatchToProps)(CartItem);
-// export default CartItem;
+// export default connect(null, mapDispatchToProps)(CartItem);
+export default CartItem;

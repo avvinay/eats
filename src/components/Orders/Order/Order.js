@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import Rupee from '../../Rupee/Rupee';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,20 +19,22 @@ const Order = (props)  => {
   let bill = (
     <React.Fragment>
       <ListItem>
-        <ListItemText primary={"Tax :"+ props.gst} />
+        <ListItemText>{"Tax :"} <Rupee />{ props.gst} </ListItemText>
       </ListItem>
       <ListItem>
-        <ListItemText primary={"Delivery Charges :"+ props.deliveryCharges} />
+        <ListItemText>{"Delivery Charges :"}<Rupee />{props.deliveryCharges}</ListItemText>
       </ListItem>
       <ListItem>
-        <ListItemText primary={"Grand Total :"+ props.total} />
+      <ListItemText>{"Grand Total :"}<Rupee />{props.total}</ListItemText>
       </ListItem>
     </React.Fragment>
   )
   let items = props.items.map((item) => {
     return (
       <ListItem>
-        <ListItemText primary={item.itemName+"("+item.quantity+")"+"  "+item.totalPrice} />
+        <ListItemText>
+        {item.itemName+"("+item.quantity+")"+"  "}<Rupee />{item.totalPrice}
+        </ListItemText>
       </ListItem>
     )
   })

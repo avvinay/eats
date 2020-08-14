@@ -119,7 +119,7 @@ const CartDialog = (props) => {
           
         </DialogActions>
       </Dialog>
-      <snack />
+      {/* <snack /> */}
     </div>
   );
 }

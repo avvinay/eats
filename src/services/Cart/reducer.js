@@ -6,7 +6,8 @@ const initialState = {
     deliveryCharges: 30,
     total: 80,
     orders: [],
-    // isUserLogged: true
+    isUserLogged: false,
+    
 };
 
 
